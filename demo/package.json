@@ -1,0 +1,9 @@
+{
+  "name": "vue-ziggeo-demo",
+  "version": "0.0.1",
+  "dependencies": {
+    "vue-ziggeo": "*",
+    "vue": "^2.5.13",
+    "vue-route": "^1.5.1"
+  }
+}
