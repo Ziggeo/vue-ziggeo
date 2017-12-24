@@ -3,18 +3,18 @@
 </template>
 
 <script>
-    import ZiggeoPlayer from './components/ZiggeoPlayer.vue';
-    import ZiggeoRecorder from './components/ZiggeoRecorder.vue';
-    import { eventBus } from "../main";
+    import ZiggeoPlayer from './components/ZiggeoPlayer/ZiggeoPlayer.vue';
+    import ZiggeoRecorder from './components/ZiggeoRecorder/ZiggeoRecorder.vue';
+    //import { eventBus } from "./main";
 
     export default {
-        beforeMount() {
-            this.application = ZiggeoApi.V2.Application.instanceByToken(this.apiKey);
-        },
-        name: 'app',
+        // name: 'app',
         components: {
             ZiggeoPlayer,
             ZiggeoRecorder
+        },
+        beforeMount() {
+            // this.application = ZiggeoApi.V2.Application.instanceByToken(this.apiKey);
         },
         created() {
             eventBus.$on("attached", (data) => {

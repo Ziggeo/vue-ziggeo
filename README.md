@@ -13,4 +13,5 @@ npm run build
 ```
 
 ## Demo
+Is located in root `demo` folder
 

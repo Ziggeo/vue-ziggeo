@@ -32,7 +32,7 @@ export const ziggeoRecorderAttributesPropTypes = {
     'primaryrecord': Boolean,
     'flip-camera': Boolean,
     'early-rerecord': Boolean,
-    'sharevideo':	arrayOf(String),
+    'sharevideo': Array,
 
     // Security parameters
     'server-auth': String,
@@ -106,8 +106,14 @@ export const ziggeoRecorderAttributesPropTypes = {
 
 export const ziggeoPlayerAttributesPropTypes = {
     // Presentational parameters
-    'width': [Number, String],
-    'height': [Number, String],
+    'width': {
+        type: [Number, String],
+        default: 640
+    },
+    'height': {
+        type: [Number, String],
+        default: 480
+    },
     'responsive': Boolean,
     'skipinitial': Boolean,
     'picksnapshots': Boolean,
@@ -116,8 +122,14 @@ export const ziggeoPlayerAttributesPropTypes = {
     'stream-height': Number,
     'nofullscreen': Boolean,
     'localplayback': Boolean,
-    'theme': String,
-    'themecolor': String,
+    'theme': {
+        type: String,
+        default: 'default'
+    },
+    'themecolor': {
+        type: String,
+        default: 'default'
+    },
     'sharevideo': Array,
 
     // Security parameters
