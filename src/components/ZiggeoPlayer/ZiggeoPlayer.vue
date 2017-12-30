@@ -1,14 +1,13 @@
 <template></template>
 
 <script>
-    // import EventBus from "../../event-bus";
     import {
         ziggeoPlayerAttributesPropTypes, ziggeoPlayerEmbeddingEventsPropTypes,
         ziggeoApiEventsPropTypes
-    } from '../../constants';
+    } from '../constants';
 
     export default {
-        name: "ziggeo-player",
+        // name: "ziggeo-player",
         props: {
             apiKey: {
                 type: String,
@@ -20,10 +19,8 @@
         },
 
         created() {
-            this.options = {
-                video: this.video
-            };
-            this.application = ZiggeoApi.V2.Application.instanceByToken(this.apiKey);
+            this.options = this._ziggeoAttributes();
+            this.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(this.apiKey);
         },
 
         mounted() {
@@ -33,12 +30,12 @@
             });
             this.player.activate();
 
-            this.player.on('attached', (data) => {
-                this.$emit('attached', data);
-                // EventBus.$emit('attached', data);
-                // EventBus.$on('attached', data); -- add listener
-                // EventBus.$on('attached', data); -- remove listener
-            });
+            Object.keys(ziggeoPlayerEmbeddingEventsPropTypes).reduce((memo, propName) => {
+                const eventName = propName.replace(/([A-Z])/g, '_$1').toLowerCase().slice(3);
+                this.player.on(eventName, (args) => {
+                    this.$emit(eventName, args)
+                });
+            }, {});
         },
 
         beforeUpdate() {},
@@ -54,16 +51,17 @@
         data() {
             return {
                 player: null,
-                application: null,
+                ziggeoApp: null,
                 options: null
             }
         },
         methods: {
-
+            _ziggeoAttributes () {
+                return Object.keys(this.$props).filter(k => ziggeoPlayerAttributesPropTypes[k]).reduce((props, k) => {
+                    props[k] = this.$props[k];
+                    return props;
+                }, {});
+            }
         }
     }
 </script>
-
-<style scoped>
-
-</style>

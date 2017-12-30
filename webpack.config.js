@@ -1,5 +1,5 @@
-var path = require('path')
-var webpack = require('webpack')
+var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
     entry: './src/main.js',
@@ -20,8 +20,16 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
+                exclude: path.resolve(__dirname, 'node_modules'),
                 options: {
+                    buble: {
+                        objectAssign: 'Object.assign',
+                        transforms: {  // turn off the `with` removal
+                            // stripWith: false
+                        }
+                    },
                     loaders: {
+                        js: 'babel-loader'
                     }
                     // other vue-loader options go here
                 }
@@ -29,7 +37,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: path.resolve(__dirname, 'node_modules'),
             },
             {
                 test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|swf)$/,

@@ -11,25 +11,49 @@ export const ziggeoApplicationEvents = {
 // https://ziggeo.com/docs/sdks/javascript/browser-integration/parameters#javascript-revision=v1-r29&javascript-version=v2
 export const ziggeoRecorderAttributesPropTypes = {
     // Presentational parameters
-    'width': [Number, String],
-    'height': [Number, String],
+    'width':{
+        type: [Number, String],
+        default: 640
+    },
+    'height': {
+        type: [Number, String],
+        default: 480
+    },
     'responsive': Boolean,
     'faceoutline': Boolean,
     'skipinitial': Boolean,
     'skipinitialonrerecord': Boolean,
-    'picksnapshots': Boolean,
-    'countdown': Number,
+    'picksnapshots':{
+        type: Boolean,
+        default: true
+    },
+    'countdown': {
+        type: Number,
+        default: 3
+    },
     'stream-width': Number,
     'stream-height': Number,
     'nofullscreen': Boolean,
-    'snapshotmax': Number,
-    'gallerysnapshots': Number,
+    'snapshotmax': {
+        type: Number,
+        default: 15
+    },
+    'gallerysnapshots': {
+        type: Number,
+        default: 3
+    },
     'localplayback': Boolean,
     'stretch': Boolean,
-    'theme': String,
+    'theme': {
+        type: String,
+        default: 'default'
+    },
     'themecolor': String,
     'autorecord': Boolean,
-    'primaryrecord': Boolean,
+    'primaryrecord': {
+        type: Boolean,
+        default: true
+    },
     'flip-camera': Boolean,
     'early-rerecord': Boolean,
     'sharevideo': Array,
@@ -40,13 +64,19 @@ export const ziggeoRecorderAttributesPropTypes = {
     'expiration-days': Number,
 
     // Video management parameters
-    'recordingwidth': Number,
-    'recordingheight': Number,
+    'recordingwidth': {
+        type: Number,
+        default: 640
+    },
+    'recordingheight': {
+        type: Number,
+        default: 480
+    },
     'video': String,
     'effect-profile': Array,
     'auto-crop': Boolean,
     'auto-pad': Boolean,
-    'key': String,
+    // 'key': String, // Vue reserved keyword never use
     'timelimit': Number,
     'timeminlimit': Number,
     'video-profile': String,
@@ -54,10 +84,22 @@ export const ziggeoRecorderAttributesPropTypes = {
     'enforce-duration': Boolean,
     'noaudio': Boolean,
     'source':	String,
-    'framerate': Number,
-    'videobitrate': [Number, String],
-    'audiobitrate': [Number, String],
-    'microphone-volume': Number,
+    'framerate': {
+        type: Number,
+        default: 25
+    },
+    'videobitrate':{
+        type: [Number, String],
+        default: 'auto'
+    },
+    'audiobitrate':{
+        type: [Number, String],
+        default: 'auto'
+    },
+    'microphone-volume': {
+        type: Number,
+        default: 1
+    },
     'custom-covershots': Boolean,
 
     // Data parameters
@@ -69,9 +111,18 @@ export const ziggeoRecorderAttributesPropTypes = {
     // Operational parameters
     'manual_upload': Boolean,
     'rerecordable':	Boolean,
-    'allowupload': Boolean,
-    'allowrecord':	Boolean,
-    'force-overwrite':	Boolean,
+    'allowupload': {
+        type: Boolean,
+        default: true
+    },
+    'allowrecord': {
+        type: Boolean,
+        default: true
+    },
+    'force-overwrite': {
+        type: Boolean,
+        default: true
+    },
     'autoplay': Boolean,
     'recordings':	Number,
     'allowedextensions': Array,
@@ -80,7 +131,10 @@ export const ziggeoRecorderAttributesPropTypes = {
     'flashincognitosupport': Boolean,
     'simulate': Boolean,
     'allowcustomupload': Boolean,
-    'recordermode': Boolean,
+    'recordermode': {
+        type: Boolean,
+        default: true
+    },
     'forceflash': Boolean,
     'noflash': Boolean,
     'manualsubmit': Boolean,
