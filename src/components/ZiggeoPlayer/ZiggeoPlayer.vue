@@ -7,7 +7,6 @@
     } from '../constants';
 
     export default {
-        // name: "ziggeo-player",
         props: {
             apiKey: {
                 type: String,
@@ -31,9 +30,9 @@
             this.player.activate();
 
             Object.keys(ziggeoPlayerEmbeddingEventsPropTypes).reduce((memo, propName) => {
-                const eventName = propName.replace(/([A-Z])/g, '_$1').toLowerCase().slice(3);
-                this.player.on(eventName, (args) => {
-                    this.$emit(eventName, args)
+                // const eventName = propName.replace(/([A-Z])/g, '_$1').toLowerCase().slice(3);
+                this.player.on(propName, (args) => {
+                    this.$emit(propName, args)
                 });
             }, {});
         },

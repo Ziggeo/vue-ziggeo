@@ -8,9 +8,9 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && npm run prebuild",
-    "prebuild": "cp node_modules/ziggeo-client-sdk/build/*.swf build && cp node_modules/ziggeo-client-sdk/build/*.png build",
-    "rebuild-demo": "npm run build && rm vue-ziggeo-0.0.1.tgz && npm pack && cd demo/ && rm -rf node_modules/vue-ziggeo/ && npm i ../vue-ziggeo-0.0.1.tgz"
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "prebuild": "rimraf ./build/* && cp node_modules/ziggeo-client-sdk/build/*.swf build && cp node_modules/ziggeo-client-sdk/build/*.png build",
+    "rebuild-demo": "npm run build && rm vue-ziggeo-0.0.1.tgz && npm pack && cd demo/ && rimraf node_modules/vue-ziggeo/ && npm i ../vue-ziggeo-0.0.1.tgz"
   },
   "files": ["build"],
   "peerDependencies": {
@@ -29,8 +29,9 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
-    "style-loader": "^0.19.1",
     "file-loader": "^1.1.4",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",

@@ -6,7 +6,6 @@
     } from '../constants';
 
     export default {
-        // name: "ziggeo-recorder",
         props: {
             apiKey: {
                 type: String,
@@ -30,9 +29,9 @@
             this.recorder.activate();
 
             Object.keys(ziggeoRecorderEmbeddingEventsPropTypes).reduce((memo, propName) => {
-                const eventName = propName.replace(/([A-Z])/g, '_$1').toLowerCase().slice(3);
-                this.recorder.on(eventName, (args) => {
-                    this.$emit(eventName, args)
+                // const eventName = propName.replace(/([A-Z])/g, '_$1').toLowerCase().slice(3);
+                this.recorder.on(propName, (args) => {
+                    this.$emit(propName, args)
                 });
             }, {});
         },

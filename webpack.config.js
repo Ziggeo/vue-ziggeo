@@ -6,7 +6,13 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './build'),
         publicPath: '/build/',
-        filename: 'index.js'
+        filename: 'index.js',
+        library: "vue-ziggeo",
+        libraryTarget: "umd",
+        umdNamedDefine: true
+    },
+    externals: {
+        vue: 'vue'
     },
     module: {
         rules: [
@@ -64,7 +70,7 @@ module.exports = {
         hints: false
     },
     devtool: '#eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'

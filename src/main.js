@@ -1,7 +1,6 @@
 const VERSION = require('../package').version;
 
 import Vue from 'vue';
-import App from './App.vue';
 
 import 'ziggeo-client-sdk/build/ziggeo.css';
 import 'ziggeo-client-sdk/build/ziggeo.js';
@@ -11,15 +10,8 @@ import ZiggeoRecorder from 'Components/ZiggeoRecorder';
 
 const install = (Vue) => {
     Vue.component("ziggeo-player", ZiggeoPlayer);
-    Vue.component("ZiggeoRecorder", ZiggeoRecorder);
+    Vue.component("ziggeo-recorder", ZiggeoRecorder);
 };
-
-new Vue({
-    el: '#app',
-    render: h => h(App)
-});
-
-export { install };
 
 export {
     ZiggeoRecorder,
