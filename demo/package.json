@@ -2,7 +2,7 @@
   "name": "vue-ziggeo-demo",
   "version": "1.0.0",
   "description": "Vuejs and Ziggeo Demo",
-  "author": "Ziggeo Inc. <info@ziggeo.com>",
+  "author": "Ziggeo Inc. <support@ziggeo.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

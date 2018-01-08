@@ -1,18 +1,15 @@
 # vue-ziggeo
 
-> VueJS integration with awesome Ziggeo video API service
-
-### How to use in your application:
-install `vue-ziggeo` via `npm` and include below files in your root `main.js` file
+#### Setup
+Install `vue-ziggeo` via `npm` and include below files in your root `main.js` file
 ```js
 import Ziggeo from 'vue-ziggeo';
 Vue.use(Ziggeo);
 
 ```
-After you free to use all Ziggeo features in your app just adding lines like below:
 
-#### Recorder:
-Replace __ZIGGEO_API_KEY__ with your own by Ziggeo App key
+#### Recorder
+Replace __ZIGGEO_API_KEY__ with your own by Ziggeo API key
 ```vue
 <template>
     <ziggeo-recorder
@@ -47,7 +44,7 @@ Replace __ZIGGEO_API_KEY__ with your own by Ziggeo App key
 </script>
 ```
 
-#### Player:
+#### Player
 Replace __ZIGGEO_API_KEY__ and __VIDEO_TOKEN__ provided by Ziggeo App
 ```vue
 <template>
@@ -81,13 +78,13 @@ Replace __ZIGGEO_API_KEY__ and __VIDEO_TOKEN__ provided by Ziggeo App
 </script>
 ```
 
-#### Ziggeo Additional Parameters
+#### Additional Parameters
 
-You can add all available all Ziggeo related options from below link:
-- [Ziggeo Available Parameters](https://ziggeo.com/docs/sdks/javascript/browser-integration/parameters#javascript-revision=v1-stable&javascript-version=v2)
-- [Ziggeo Available Embedding Events](https://ziggeo.com/docs/sdks/javascript/browser-interaction/events)
+You can add all available Ziggeo-related options here:
+- [Ziggeo Parameters](https://ziggeo.com/docs/sdks/javascript/browser-integration/parameters)
+- [Ziggeo Events](https://ziggeo.com/docs/sdks/javascript/browser-interaction/events)
 
 
 #### Demo
-It's located in root [`demo`](https://github.com/Ziggeo/vue-ziggeo/tree/master/demo) folder
+A demo is located in the root [`demo`](https://github.com/Ziggeo/vue-ziggeo/tree/master/demo) folder.
 

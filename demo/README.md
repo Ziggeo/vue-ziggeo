@@ -1,6 +1,6 @@
 # vue-ziggeo-demo
 
-> Vuejs and Ziggeo Demo
+> VueJS and Ziggeo Demo
 
 ## Build Setup
 
