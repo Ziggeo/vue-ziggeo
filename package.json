@@ -1,7 +1,7 @@
 {
   "name": "vue-ziggeo",
   "description": "VueJS integration for Ziggeo's video recording/playback API",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "./build/index",
   "author": "Ziggeo Inc <support@ziggeo.com>",
   "license": "Apache-2.0",
@@ -11,7 +11,9 @@
     "prebuild": "rimraf ./build/* && cp node_modules/ziggeo-client-sdk/build/*.swf build && cp node_modules/ziggeo-client-sdk/build/*.png build",
     "rebuild-demo": "npm run build && rm vue-ziggeo-0.0.1.tgz && npm pack && cd demo/ && rimraf node_modules/vue-ziggeo/ && npm i ../vue-ziggeo-0.0.1.tgz"
   },
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "peerDependencies": {
     "vue": ">=2.4.0"
   },
@@ -36,6 +38,6 @@
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1",
-    "ziggeo-client-sdk": "^0.0.29"
+    "ziggeo-client-sdk": "^0.0.30"
   }
 }

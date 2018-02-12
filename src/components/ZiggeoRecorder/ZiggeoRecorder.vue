@@ -2,7 +2,8 @@
 
 <script>
     import {
-        ziggeoRecorderAttributesPropTypes, ziggeoRecorderEmbeddingEventsPropTypes
+        ziggeoRecorderAttributesPropTypes, ziggeoRecorderEmbeddingEventsPropTypes,
+        screenRecorderOptions
     } from '../constants';
 
     export default {
@@ -10,15 +11,24 @@
             apiKey: {
                 type: String,
                 required: true,
-                default: ''
+                default: null
             },
             ...ziggeoRecorderAttributesPropTypes,
-            ...ziggeoRecorderEmbeddingEventsPropTypes
+            ...ziggeoRecorderEmbeddingEventsPropTypes,
+            ...screenRecorderOptions
         },
 
         created() {
             this.options = this._ziggeoAttributes();
-            this.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(this.apiKey);
+
+            // Allow screen application options
+            if (this.allowscreen) {
+                this._applicationOptions(function (context, options) {
+                    context.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(context.apiKey, options);
+                }, this);
+            } else
+                this.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(this.apiKey, this.applicationOptions);
+
         },
 
         mounted() {
@@ -50,7 +60,8 @@
             return {
                 recorder: null,
                 ziggeoApp: null,
-                options: null
+                options: null,
+                applicationOptions: {}
             }
         },
         methods: {
@@ -59,7 +70,21 @@
                     props[k] = this.$props[k];
                     return props;
                 }, {});
+            },
+
+            _applicationOptions (callback, context) {
+                if (!context.screenOptions) {
+                    context.applicationOptions = {
+                        chrome_extension_id: context.chrome_extension_id,
+                        chrome_extension_install_link: context.chrome_extension_install_link,
+                        opera_extension_id: context.opera_extension_id,
+                        opera_extension_install_link: context.opera_extension_install_link
+                    };
+                    return callback(context, context.applicationOptions);
+                } else
+                    return callback(context, context.screenOptions);
             }
+
         }
     }
 </script>

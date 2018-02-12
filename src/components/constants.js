@@ -119,6 +119,10 @@ export const ziggeoRecorderAttributesPropTypes = {
         type: Boolean,
         default: true
     },
+    'allowscreen': {
+        type: Boolean,
+        default: false
+    },
     'force-overwrite': {
         type: Boolean,
         default: true
@@ -332,6 +336,31 @@ export const ziggeoApiEventsPropTypes = {
     onEventAccessGranted: Function,
     onEventAccessRevoked: Function,
     onEventRecorderProcessed: Function
+};
+
+// #######################  Screen Recorder Options  ##############################
+export const screenRecorderOptions = {
+    screenOptions: {
+        type: Object,
+        default: null,
+    },
+    'chrome_extension_id': {
+        type: String,
+        default: 'meoefjkcilgjlkibnjjlfdgphacbeglk'
+    },
+    'chrome_extension_install_link': {
+        type: String,
+        default: 'https://chrome.google.com/webstore/detail/meoefjkcilgjlkibnjjlfdgphacbeglk'
+    },
+    'opera_extension_id': {
+        type: String,
+        default: 'dnnolmnenehhgplebjhbcmfdbaabkepm'
+    },
+    'opera_extension_install_link': {
+        type: String,
+        default: 'https://addons.opera.com/en/extensions/details/3d46d4c36fefe97e76622c54b2eb6ea1d5406767'
+    }
+
 };
 
 // #######################  Vue Common Options  ##############################
