@@ -1,6 +1,4 @@
-# vue-ziggeo
-
-##### Current Version 0.1.0
+# vue-ziggeo v0.1.0
 
 #### Setup
 Install `vue-ziggeo` via `npm` and include below files in your root `main.js` file
