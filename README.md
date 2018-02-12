@@ -45,7 +45,7 @@ Replace __ZIGGEO_API_KEY__ with your own by Ziggeo API key
 ```
 
 ##### Screen Recorder
-Using Ziggeo you can also record your screen: <br/>
+Using Ziggeo you can also record your screen. <br/>
 In development mode with `localhost` you can test it with `Ziggeo` chrome/opera extensions which will be set automatically, FireFox support it by default. <br/>
 For production environment you have to generate your own extensions. [For more details](https://ziggeo.com/features/screen-recording) <br/>
 

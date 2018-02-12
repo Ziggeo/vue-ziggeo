@@ -30,7 +30,7 @@
         name: 'app',
         data () {
             return {
-                msg: 'Welcome to Your Vue.js And ZiggeoModule App integration demo'
+                msg: 'Welcome to Your Vue.js And Ziggeo App integration demo'
             }
         },
         methods: {
