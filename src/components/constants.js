@@ -28,7 +28,7 @@ export const ziggeoRecorderAttributesPropTypes = {
         default: true
     },
     'countdown': {
-        type: Number,
+        type: [Number, Function],
         default: 3
     },
     'stream-width': Number,
@@ -175,7 +175,7 @@ export const ziggeoPlayerAttributesPropTypes = {
     'responsive': Boolean,
     'skipinitial': Boolean,
     'picksnapshots': Boolean,
-    'countdown': Number,
+    'countdown': [ Number, Function ],
     'stream-width': Number,
     'stream-height': Number,
     'nofullscreen': Boolean,
@@ -260,7 +260,7 @@ export const ziggeoRecorderEmbeddingEventsPropTypes = {
     recording: Function,
     uploading: Function,
     rerecord: Function,
-    countdown: Function,
+    countdown: [Number, Function],
     progress: Function,
     upload_progress: Function,
     processing: Function,

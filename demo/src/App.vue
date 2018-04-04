@@ -17,6 +17,8 @@
         :apiKey="'ZIGGEO_API_KEY'"
         :width="110"
         :height="80"
+        :countdown=10
+        @countdown="countdownEvent"
         @camera_unresponsive="recorderCameraUnresponsive"
         @access_forbidden="recorderAccessForbidden"
         @upload_selected="recorderUploadSelected"
@@ -49,6 +51,10 @@
 
             recorderAccessForbidden: function () {
                 console.log('access forbidden');
+            },
+
+            countdownEvent: (ms) => {
+                console.log('countdown miscroseconds', ms);
             },
 
             recorderUploadSelected: (file) => {
