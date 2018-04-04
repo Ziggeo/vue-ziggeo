@@ -1,7 +1,7 @@
 {
   "name": "vue-ziggeo",
   "description": "VueJS integration for Ziggeo's video recording/playback API",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./build/index",
   "author": "Ziggeo Inc <support@ziggeo.com>",
   "license": "Apache-2.0",
