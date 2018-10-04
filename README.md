@@ -1,4 +1,4 @@
-# vue-ziggeo v0.2.1
+# vue-ziggeo v1.0.1
 
 #### Setup
 Install `vue-ziggeo` via `npm` and include below files in your root `main.js` file
@@ -107,3 +107,4 @@ A demo is located in the root [`demo`](https://github.com/Ziggeo/vue-ziggeo/tree
 #### Changelog
 - v0.1.0 upgraded to ziggeo 0.0.30 version and added screen recorder option
 - v0.2.0 Fixed countdown related conflict
+- v1.0.1 Upgraded `ziggeo-client` SDK to `2.31.1` pre-release version.
