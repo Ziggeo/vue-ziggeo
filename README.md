@@ -1,4 +1,4 @@
-# vue-ziggeo v1.0.1
+# vue-ziggeo
 
 #### Setup
 Install `vue-ziggeo` via `npm` and include below files in your root `main.js` file
@@ -26,15 +26,16 @@ Replace __ZIGGEO_API_KEY__ with your own by Ziggeo API key
         ...
         methods: {
 
-            recorderCameraUnresponsive: function() {
+            // starting vue-ziggeo@2.0.0 version embedding argument also accessible
+            recorderCameraUnresponsive: function(embedding /* only starting from vue-ziggeo@2.0.0 */) {
                 console.log('camera unresponsive');
             },
 
-            recorderAccessForbidden: function () {
+            recorderAccessForbidden: function (embedding /* only starting from vue-ziggeo@2.0.0 */) {
                 console.log('access forbidden');
             },
 
-            recorderUploadSelected: (file) => {
+            recorderUploadSelected: (embedding /* only starting from vue-ziggeo@2.0.0 */, file) => {
                 console.log('upload selected', file);
             }
             ...
@@ -79,11 +80,12 @@ Replace __ZIGGEO_API_KEY__ and __VIDEO_TOKEN__ provided by Ziggeo App
         ...
         methods: {
 
-            playerAttached: function (data) {
+            // starting vue-ziggeo@2.0.0 version embedding argument also accessible
+            playerAttached: function (embedding /* only starting from vue-ziggeo@2.0.0 */, data) {
                 console.log('player attached', data)
             },
 
-            playerPlaying: () => {
+            playerPlaying: (embedding /* only starting from vue-ziggeo@2.0.0 */) => {
                 console.log('player playing');
             },
 
@@ -119,4 +121,6 @@ In your `package.json` file you will have a section called `"devDependencies": {
 #### Changelog
 - v0.1.0 upgraded to ziggeo 0.0.30 version and added screen recorder option
 - v0.2.0 Fixed countdown related conflict
-- v1.0.1 Upgraded `ziggeo-client` SDK to `2.31.1` pre-release version.
+- v1.0.1 Upgraded `ziggeo-client-sdk` SDK to `2.31.*` pre-release version.
+- v1.1.0 Upgraded `ziggeo-client-sdk` SDK to `2.32.*` version. Fixed try/catch variable name conflict
+- v2.0.1 Added `embedding` argument for each method, [read more...](https://ziggeo.com/docs/sdks/javascript/browser-interaction/application-embedding-events#javascript-revision=stable)

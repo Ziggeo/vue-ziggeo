@@ -1,13 +1,14 @@
 {
   "name": "vue-ziggeo",
   "description": "VueJS integration for Ziggeo's video recording/playback API",
-  "version": "1.0.2",
+  "version": "2.0.1",
   "main": "./build/index",
   "author": {
     "name": "Ziggeo Inc",
     "email": "support@ziggeo.com"
   },
   "license": "Apache-2.0",
+  "homepage": "https://ziggeo.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",

@@ -41,7 +41,7 @@
             Object.keys(ziggeoRecorderEmbeddingEventsPropTypes).reduce((memo, propName) => {
                 // const eventName = propName.replace(/([A-Z])/g, '_$1').toLowerCase().slice(3);
                 this.recorder.on(propName, (args) => {
-                    this.$emit(propName, args)
+                    this.$emit(propName, this.recorder, args);
                 });
             }, {});
         },
