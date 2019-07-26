@@ -159,7 +159,17 @@ export const ziggeoRecorderAttributesPropTypes = {
 
     // Form and HTML parameters
     'input-bind': String,
-    'form-accept': String
+    'form-accept': String,
+
+    // Application Options Container
+    applicationOptions: {
+        type: Object,
+        default: {},
+    },
+    screenOptions: {
+        type: Object,
+        default: {},
+    },
 };
 
 export const ziggeoPlayerAttributesPropTypes = {
@@ -339,28 +349,17 @@ export const ziggeoApiEventsPropTypes = {
 };
 
 // #######################  Screen Recorder Options  ##############################
-export const screenRecorderOptions = {
-    screenOptions: {
-        type: Object,
-        default: null,
-    },
-    'chrome_extension_id': {
-        type: String,
-        default: 'meoefjkcilgjlkibnjjlfdgphacbeglk'
-    },
-    'chrome_extension_install_link': {
-        type: String,
-        default: 'https://chrome.google.com/webstore/detail/meoefjkcilgjlkibnjjlfdgphacbeglk'
-    },
-    'opera_extension_id': {
-        type: String,
-        default: 'dnnolmnenehhgplebjhbcmfdbaabkepm'
-    },
-    'opera_extension_install_link': {
-        type: String,
-        default: 'https://addons.opera.com/en/extensions/details/3d46d4c36fefe97e76622c54b2eb6ea1d5406767'
-    }
-
+export const recorderApplicationDefaultOptions = {
+    'webrtc_streaming': false,
+    'webrtc_streaming_if_necessary': false,
+    'webrtc_on_mobile': false,
+    'auth': false,
+    'debug': false,
+    'testing_application': false,
+    'chrome_extension_id': 'meoefjkcilgjlkibnjjlfdgphacbeglk',
+    'chrome_extension_install_link': 'https://chrome.google.com/webstore/detail/meoefjkcilgjlkibnjjlfdgphacbeglk',
+    'opera_extension_id': 'dnnolmnenehhgplebjhbcmfdbaabkepm',
+    'opera_extension_install_link': 'https://addons.opera.com/en/extensions/details/3d46d4c36fefe97e76622c54b2eb6ea1d5406767'
 };
 
 // #######################  Vue Common Options  ##############################
