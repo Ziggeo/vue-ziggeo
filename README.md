@@ -45,6 +45,19 @@ Replace __ZIGGEO_API_KEY__ with your own by Ziggeo API key
 </script>
 ```
 
+##### Recorder Application Settings
+You can set application settings based on your requirement
+```vue
+    :applicationOptions="{ 
+        'webrtc_streaming': boolean (default: false),
+        'webrtc_streaming_if_necessary': boolean (default: false),
+        'webrtc_on_mobile': boolean (default: false),
+        'auth': boolean (default: false),
+        'debug': boolean (default: false)
+    }"
+```
+
+
 ##### Screen Recorder
 Using Ziggeo you can also record your screen. <br/>
 In development mode with `localhost` you can test it with `Ziggeo` chrome/opera extensions which will be set automatically, FireFox support it by default. <br/>
@@ -53,7 +66,7 @@ For production environment you have to generate your own extensions. [For more d
 Setup Vue recorder:
 ```vue
     :allowscreen=true
-    :screenOptions="{
+    :applicationOptions="{
       chrome_extension_id: 'your_chrome_extension_id',
       chrome_extension_install_link: 'your_chrome_extension_install_link',
       opera_extension_id: 'your_opera_extension_id',
@@ -124,3 +137,4 @@ In your `package.json` file you will have a section called `"devDependencies": {
 - v1.0.1 Upgraded `ziggeo-client-sdk` SDK to `2.31.*` pre-release version.
 - v1.1.0 Upgraded `ziggeo-client-sdk` SDK to `2.32.*` version. Fixed try/catch variable name conflict
 - v2.0.1 Added `embedding` argument for each method, [read more...](https://ziggeo.com/docs/sdks/javascript/browser-interaction/application-embedding-events#javascript-revision=stable)
+- v2.1.0 Added `applicationOptions` property which will accept application settings `webrtc_streaming`, `webrtc_streaming_if_necessary`, `webrtc_on_mobile`, `auth`, `debug`, `testing_application` and `screenRecord` settings like `chrome_extension_id`. Upgraded to Ziggeo stable r33

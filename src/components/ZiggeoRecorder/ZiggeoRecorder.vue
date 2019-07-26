@@ -3,7 +3,7 @@
 <script>
     import {
         ziggeoRecorderAttributesPropTypes, ziggeoRecorderEmbeddingEventsPropTypes,
-        screenRecorderOptions
+        recorderApplicationDefaultOptions
     } from '../constants';
 
     export default {
@@ -14,21 +14,20 @@
                 default: null
             },
             ...ziggeoRecorderAttributesPropTypes,
-            ...ziggeoRecorderEmbeddingEventsPropTypes,
-            ...screenRecorderOptions
+            ...ziggeoRecorderEmbeddingEventsPropTypes
         },
 
         created() {
             this.options = this._ziggeoAttributes();
 
-            // Allow screen application options
-            if (this.allowscreen) {
-                this._applicationOptions(function (context, options) {
-                    context.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(context.apiKey, options);
-                }, this);
-            } else
-                this.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(this.apiKey, this.applicationOptions);
+            let { screenOptions, applicationOptions } = this;
+            let _applicationOptions = {...recorderApplicationDefaultOptions, ...applicationOptions};
+            if (screenOptions) {
+                console.warn('screenOptions is deprecated and will be removed in future release, please use all options with applicationOptions despite.');
+                _applicationOptions = {...screenOptions, ..._applicationOptions};
+            }
 
+            this.ziggeoApp = ZiggeoApi.V2.Application.instanceByToken(this.apiKey, _applicationOptions);
         },
 
         mounted() {
@@ -61,7 +60,6 @@
                 recorder: null,
                 ziggeoApp: null,
                 options: null,
-                applicationOptions: {}
             }
         },
         methods: {
@@ -70,21 +68,7 @@
                     props[k] = this.$props[k];
                     return props;
                 }, {});
-            },
-
-            _applicationOptions (callback, context) {
-                if (!context.screenOptions) {
-                    context.applicationOptions = {
-                        chrome_extension_id: context.chrome_extension_id,
-                        chrome_extension_install_link: context.chrome_extension_install_link,
-                        opera_extension_id: context.opera_extension_id,
-                        opera_extension_install_link: context.opera_extension_install_link
-                    };
-                    return callback(context, context.applicationOptions);
-                } else
-                    return callback(context, context.screenOptions);
             }
-
         }
     }
 </script>
