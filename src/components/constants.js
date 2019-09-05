@@ -111,6 +111,10 @@ export const ziggeoRecorderAttributesPropTypes = {
     // Operational parameters
     'manual_upload': Boolean,
     'rerecordable':	Boolean,
+    'addstreampositionx': Number,
+    'addstreampositiony': Number,
+    'addstreampositionwidth': Number,
+    'addstreampositionheight': Number,
     'allowupload': {
         type: Boolean,
         default: true
@@ -120,6 +124,10 @@ export const ziggeoRecorderAttributesPropTypes = {
         default: true
     },
     'allowscreen': {
+        type: Boolean,
+        default: false
+    },
+    'allowmultistreams': {
         type: Boolean,
         default: false
     },

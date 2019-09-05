@@ -12,3 +12,4 @@ yarn-error.log
 *.sln
 *.tgz
 package-lock.json
+yarn.lock
