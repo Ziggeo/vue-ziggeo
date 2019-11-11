@@ -6,8 +6,8 @@
       <ziggeo-player
           :apiKey="'ZIGGEO_API_KEY'"
           :video="'VIDEO_TOKEN'"
-          :width="330"
-          :height="210"
+          :width="320"
+          :height="180"
           @attached="playerAttached"
           @playing="playerPlaying"
       ></ziggeo-player>
@@ -15,8 +15,10 @@
     <h2>Ziggeo Recorder</h2>
     <ziggeo-recorder
         :apiKey="'ZIGGEO_API_KEY'"
-        :width="110"
-        :height="80"
+        :width="320"
+        :height="180"
+        :recordingwidth="320"
+        :recordingheight="180"
         :countdown=10
         @countdown="countdownEvent"
         @camera_unresponsive="recorderCameraUnresponsive"
