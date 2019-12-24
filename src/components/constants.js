@@ -76,7 +76,7 @@ export const ziggeoRecorderAttributesPropTypes = {
     'effect-profile': Array,
     'auto-crop': Boolean,
     'auto-pad': Boolean,
-    // 'key': String, // Vue reserved keyword never use
+    '_key': String, // `key` is Vue reserved keyword never use without underscore prefix
     'timelimit': Number,
     'timeminlimit': Number,
     'video-profile': String,
@@ -170,13 +170,17 @@ export const ziggeoRecorderAttributesPropTypes = {
     'form-accept': String,
 
     // Application Options Container
-    applicationOptions: {
-        type: Object,
-        default: {},
-    },
+    applicationOptions: Object,
     screenOptions: {
         type: Object,
-        default: {},
+        default() {
+            return {
+                chrome_extension_id: "meoefjkcilgjlkibnjjlfdgphacbeglk",
+                chrome_extension_install_link: "https://chrome.google.com/webstore/detail/meoefjkcilgjlkibnjjlfdgphacbeglk",
+                opera_extension_id: "dnnolmnenehhgplebjhbcmfdbaabkepm",
+                opera_extension_install_link: "https://addons.opera.com/en/extensions/details/3d46d4c36fefe97e76622c54b2eb6ea1d5406767"
+            };
+        }
     },
 };
 
@@ -198,6 +202,7 @@ export const ziggeoPlayerAttributesPropTypes = {
     'stream-height': Number,
     'nofullscreen': Boolean,
     'localplayback': Boolean,
+    '_key': String, // `key` is Vue reserved keyword never use without underscore prefix
     'theme': {
         type: String,
         default: 'default'
