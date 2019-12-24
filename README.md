@@ -111,9 +111,10 @@ Replace __ZIGGEO_API_KEY__ and __VIDEO_TOKEN__ provided by Ziggeo App
 
 #### Additional Parameters
 
-You can add all available Ziggeo-related options here:
+You can add all available Ziggeo-related parameters here:
 - [Ziggeo Parameters](https://ziggeo.com/docs/sdks/javascript/browser-integration/parameters)
 - [Ziggeo Events](https://ziggeo.com/docs/sdks/javascript/browser-interaction/events)
+- Only `key` parameter was replaced with `_key`, as `Vue` use it as reserved variable
 
 
 #### Demo
@@ -139,3 +140,4 @@ In your `package.json` file you will have a section called `"devDependencies": {
 - v2.0.1 Added `embedding` argument for each method, [read more...](https://ziggeo.com/docs/sdks/javascript/browser-interaction/application-embedding-events#javascript-revision=stable)
 - v2.1.0 Added `applicationOptions` property which will accept application settings `webrtc_streaming`, `webrtc_streaming_if_necessary`, `webrtc_on_mobile`, `auth`, `debug`, `testing_application` and `screenRecord` settings like `chrome_extension_id`. Upgraded to Ziggeo stable r33
 - v2.1.1 Upgraded `ziggeo-client-sdk` SDK to `2.34.8` version. Fixed some bugs
+- v2.2.0 Upgraded `ziggeo-client-sdk` SDK to `2.34.14` version. Added `_key` parameter usability, fixed minor bug

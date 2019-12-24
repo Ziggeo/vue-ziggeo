@@ -65,7 +65,7 @@
         methods: {
             _ziggeoAttributes () {
                 return Object.keys(this.$props).filter(k => ziggeoRecorderAttributesPropTypes[k]).reduce((props, k) => {
-                    props[k] = this.$props[k];
+                    props[k.replace(/^_/g, '')] = this.$props[k];
                     return props;
                 }, {});
             }
