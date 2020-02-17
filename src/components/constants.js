@@ -446,8 +446,8 @@ export const ziggeoApiEventsPropTypes = {
 // #######################  Screen Recorder Options  ##############################
 export const recorderApplicationDefaultOptions = {
     'webrtc_streaming': false,
-    'webrtc_streaming_if_necessary': false,
-    'webrtc_on_mobile': false,
+    'webrtc_streaming_if_necessary': true,
+    'webrtc_on_mobile': true,
     'auth': false,
     'debug': false,
     'testing_application': false,
