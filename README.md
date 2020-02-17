@@ -133,11 +133,12 @@ In your `package.json` file you will have a section called `"devDependencies": {
 * This would make your own repository use our 2.32.1 version of our system. In case our Vue SDK requires higher version that you have set up you would be alerted when you do `npm install`.
 
 #### Changelog
-- v0.1.0 upgraded to ziggeo 0.0.30 version and added screen recorder option
-- v0.2.0 Fixed countdown related conflict
-- v1.0.1 Upgraded `ziggeo-client-sdk` SDK to `2.31.*` pre-release version.
-- v1.1.0 Upgraded `ziggeo-client-sdk` SDK to `2.32.*` version. Fixed try/catch variable name conflict
-- v2.0.1 Added `embedding` argument for each method, [read more...](https://ziggeo.com/docs/sdks/javascript/browser-interaction/application-embedding-events#javascript-revision=stable)
-- v2.1.0 Added `applicationOptions` property which will accept application settings `webrtc_streaming`, `webrtc_streaming_if_necessary`, `webrtc_on_mobile`, `auth`, `debug`, `testing_application` and `screenRecord` settings like `chrome_extension_id`. Upgraded to Ziggeo stable r33
-- v2.1.1 Upgraded `ziggeo-client-sdk` SDK to `2.34.8` version. Fixed some bugs
+- v2.3.0 Upgraded `ziggeo-client-sdk` SDK to `2.35.4` version. With new features like multi-stream recorder
 - v2.2.0 Upgraded `ziggeo-client-sdk` SDK to `2.34.14` version. Added `_key` parameter usability, fixed minor bug
+- v2.1.1 Upgraded `ziggeo-client-sdk` SDK to `2.34.8` version. Fixed some bugs
+- v2.1.0 Added `applicationOptions` property which will accept application settings `webrtc_streaming`, `webrtc_streaming_if_necessary`, `webrtc_on_mobile`, `auth`, `debug`, `testing_application` and `screenRecord` settings like `chrome_extension_id`. Upgraded to Ziggeo stable r33
+- v2.0.1 Added `embedding` argument for each method, [read more...](https://ziggeo.com/docs/sdks/javascript/browser-interaction/application-embedding-events#javascript-revision=stable)
+- v1.1.0 Upgraded `ziggeo-client-sdk` SDK to `2.32.*` version. Fixed try/catch variable name conflict
+- v1.0.1 Upgraded `ziggeo-client-sdk` SDK to `2.31.*` pre-release version.
+- v0.2.0 Fixed countdown related conflict
+- v0.1.0 upgraded to ziggeo 0.0.30 version and added screen recorder option
