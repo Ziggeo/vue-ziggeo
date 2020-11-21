@@ -73,6 +73,10 @@ export const ziggeoRecorderAttributesPropTypes = {
         type: Number,
         default: 480
     },
+    'minuploadingwidth': Number,
+    'maxuploadingwidth': Number,
+    'minuploadingheight': Number,
+    'maxuploadingheight': Number,
     'video': String,
     'effect-profile': Array,
     'auto-crop': Boolean,
@@ -177,7 +181,7 @@ export const ziggeoRecorderAttributesPropTypes = {
         default: true
     },
     'autoplay': Boolean,
-    'recordings':	Number,
+    'recordings': Number,
     'allowedextensions': Array,
     'application':	String,
     'filesizelimit': Number,
@@ -188,6 +192,7 @@ export const ziggeoRecorderAttributesPropTypes = {
     'createthumbnails': Boolean,
     'showsettingsmenu': Boolean, // As a property show/hide from users
     'hidevolumebar': Boolean,
+    'fittodimensions': Boolean,
     'recordermode': {
         type: Boolean,
         default: true
@@ -214,11 +219,11 @@ export const ziggeoRecorderAttributesPropTypes = {
     'popup-stretch': Boolean,
     'framerate-warning': String,
     'snapshottype': String,
-    "rtmpstreamtype": {
+    'rtmpstreamtype': {
         type: String,
         default: 'mp4'
     },
-    "rtmpmicrophonecodec": {
+    'rtmpmicrophonecodec': {
         type: String,
         default: 'speex'
     },
@@ -275,6 +280,10 @@ export const ziggeoPlayerAttributesPropTypes = {
     },
     'countdown': [ Number, Function ],
     'stretch': Boolean,
+    'fitonwidth': Boolean,
+    'fitonheight': Boolean,
+    'preroll': Boolean,
+    'vast': Array,
     'popup-stretch': Boolean,
     'preventinteraction': Boolean,
     'stretchwidth': Boolean,

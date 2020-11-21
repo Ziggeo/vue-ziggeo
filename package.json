@@ -1,7 +1,7 @@
 {
   "name": "vue-ziggeo",
   "description": "VueJS integration for Ziggeo's video recording/playback API",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "main": "./build/index",
   "author": {
     "name": "Ziggeo Inc",
@@ -56,6 +56,6 @@
     "vue-template-compiler": "^2.4.4",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1",
-    "ziggeo-client-sdk": "^2.35.4"
+    "ziggeo-client-sdk": "^2.35.22"
   }
 }
