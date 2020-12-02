@@ -1,24 +1,17 @@
 // ####################### Application Events #############################
-
 // application.embed_event.on..
 export const ziggeoApplicationEvents = {
     onError: Function,
     onReady: Function
 };
 
-export const globalOptions = {
-    'auto-install-vue': {
-        type: Boolean,
-        default: true
-    }
-}
 
 // ####################### Player/Recorder Attributes #############################
 // When using HTML embed methods, all parameters should be prefixed with ziggeo-
 // https://ziggeo.com/docs/sdks/javascript/browser-integration/parameters#javascript-revision=v1-r29&javascript-version=v2
 export const ziggeoRecorderAttributesPropTypes = {
     // Presentational parameters
-    'width': {
+    'width':{
         type: [Number, String],
         default: 640
     },
@@ -30,7 +23,7 @@ export const ziggeoRecorderAttributesPropTypes = {
     'faceoutline': Boolean,
     'skipinitial': Boolean,
     'skipinitialonrerecord': Boolean,
-    'picksnapshots': {
+    'picksnapshots':{
         type: Boolean,
         default: true
     },
@@ -80,6 +73,10 @@ export const ziggeoRecorderAttributesPropTypes = {
         type: Number,
         default: 480
     },
+    'minuploadingwidth': Number,
+    'maxuploadingwidth': Number,
+    'minuploadingheight': Number,
+    'maxuploadingheight': Number,
     'video': String,
     'effect-profile': Array,
     'auto-crop': Boolean,
@@ -184,7 +181,7 @@ export const ziggeoRecorderAttributesPropTypes = {
         default: true
     },
     'autoplay': Boolean,
-    'recordings':	Number,
+    'recordings': Number,
     'allowedextensions': Array,
     'application':	String,
     'filesizelimit': Number,
@@ -195,6 +192,7 @@ export const ziggeoRecorderAttributesPropTypes = {
     'createthumbnails': Boolean,
     'showsettingsmenu': Boolean, // As a property show/hide from users
     'hidevolumebar': Boolean,
+    'fittodimensions': Boolean,
     'recordermode': {
         type: Boolean,
         default: true
@@ -221,11 +219,11 @@ export const ziggeoRecorderAttributesPropTypes = {
     'popup-stretch': Boolean,
     'framerate-warning': String,
     'snapshottype': String,
-    "rtmpstreamtype": {
+    'rtmpstreamtype': {
         type: String,
         default: 'mp4'
     },
-    "rtmpmicrophonecodec": {
+    'rtmpmicrophonecodec': {
         type: String,
         default: 'speex'
     },
@@ -282,6 +280,10 @@ export const ziggeoPlayerAttributesPropTypes = {
     },
     'countdown': [ Number, Function ],
     'stretch': Boolean,
+    'fitonwidth': Boolean,
+    'fitonheight': Boolean,
+    'preroll': Boolean,
+    'vast': Array,
     'popup-stretch': Boolean,
     'preventinteraction': Boolean,
     'stretchwidth': Boolean,
@@ -360,7 +362,6 @@ export const ziggeoPlayerAttributesPropTypes = {
 export const ziggeoRecorderEmbeddingEventsPropTypes = {
     attached: Function,
     loaded: Function,
-    bound: Function,
     playing: Function,
     paused: Function,
     ended: Function,
@@ -383,22 +384,7 @@ export const ziggeoRecorderEmbeddingEventsPropTypes = {
     camera_unresponsive: Function,
     verified: Function,
     no_camera: Function,
-    ready_to_record: Function,
-    ready_to_play: Function,
-    recording_stopped: Function,
-    stopped: Function,
-    has_camera: Function,
-    camera_signal: Function,
-    camerahealth: Function,
-    camera_nosignal: Function,
-    no_microphone: Function,
-    has_microphone: Function,
-    microphonehealth: Function,
-    "invoke-skip": Function,
-    "select-image": Function,
-    "pause-google-cast": Function,
-    "play-google-cast": Function,
-    "change-google-cast-volume": Function,
+    no_microphone: Function
 };
 
 export const ziggeoPlayerEmbeddingEventsPropTypes = {
@@ -408,9 +394,7 @@ export const ziggeoPlayerEmbeddingEventsPropTypes = {
     paused: Function,
     ended: Function,
     error: Function,
-    seek: Function,
-    stopped: Function,
-    ready_to_play: Function,
+    seek: Function
 };
 
 // #######################  ZIGGEO METHODS  ##############################
@@ -468,51 +452,21 @@ export const ziggeoApiEventsPropTypes = {
     onEventRecorderProcessed: Function
 };
 
-export const commonApplicationOptions = {
-    'auth': {
-        type: Boolean,
-        default: false
-    },
-    'debug': {
-        type: Boolean,
-        default: false
-    },
-    'testing_application': {
-        type: Boolean,
-        default: false
-    }
+// #######################  Screen Recorder Options  ##############################
+export const recorderApplicationDefaultOptions = {
+    'webrtc_streaming': false,
+    'webrtc_streaming_if_necessary': true,
+    'webrtc_on_mobile': true,
+    'auth': false,
+    'debug': false,
+    'testing_application': false,
+    'chrome_extension_id': 'meoefjkcilgjlkibnjjlfdgphacbeglk',
+    'chrome_extension_install_link': 'https://chrome.google.com/webstore/detail/meoefjkcilgjlkibnjjlfdgphacbeglk',
+    'opera_extension_id': 'dnnolmnenehhgplebjhbcmfdbaabkepm',
+    'opera_extension_install_link': 'https://addons.opera.com/en/extensions/details/3d46d4c36fefe97e76622c54b2eb6ea1d5406767'
 };
 
-
-// #######################  Recorder Application Options  ##############################
-export const recorderApplicationOptions = {
-    'webrtc_streaming': {
-        type: Boolean,
-        default: false
-    },
-    'webrtc_streaming_if_necessary': {
-        type: Boolean,
-        default: true
-    },
-    'webrtc_on_mobile': {
-        type: Boolean,
-        default: true
-    },
-    'chrome_extension_id': {
-        type: String,
-        default: 'meoefjkcilgjlkibnjjlfdgphacbeglk'
-    },
-    'chrome_extension_install_link': {
-        type: String,
-        default: 'https://chrome.google.com/webstore/detail/meoefjkcilgjlkibnjjlfdgphacbeglk'
-    },
-    'opera_extension_id': {
-        type: String,
-        default: 'dnnolmnenehhgplebjhbcmfdbaabkepm'
-    },
-    'opera_extension_install_link': {
-        type: String,
-        default: 'https://addons.opera.com/en/extensions/details/3d46d4c36fefe97e76622c54b2eb6ea1d5406767'
-    }
+// #######################  Vue Common Options  ##############################
+export const vueCustomOptions = {
+    preventReRenderOnUpdate: Boolean
 };
-

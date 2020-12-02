@@ -1,9 +1,9 @@
 .DS_Store
 node_modules/
-dist/
 tmp/
 npm-debug.log
 yarn-error.log
+demo/src/credentials.js
 
 # Editor directories and files
 .idea
