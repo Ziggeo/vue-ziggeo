@@ -1,0 +1,1 @@
+export {default} from './ZiggeoRecorder.vue'

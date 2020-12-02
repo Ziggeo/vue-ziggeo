@@ -1,0 +1,61 @@
+{
+  "name": "vue-ziggeo",
+  "description": "VueJS integration for Ziggeo's video recording/playback API",
+  "version": "2.3.1",
+  "main": "./build/index",
+  "author": {
+    "name": "Ziggeo Inc",
+    "email": "support@ziggeo.com"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://ziggeo.com",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "reinstall": "rm -rf node_modules/ && rm yarn.lock && yarn install",
+    "postbuild": "cp node_modules/ziggeo-client-sdk/build/*.swf build && cp node_modules/ziggeo-client-sdk/build/*.png build",
+    "rebuild-demo": "npm run build && rm vue-ziggeo-test.tgz && npm pack && cd demo/ && rimraf node_modules/vue-ziggeo/ && npm i ../vue-ziggeo-test.tgz"
+  },
+  "files": [
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ziggeo/vue-ziggeo"
+  },
+  "keywords": [
+    "vuejs-component",
+    "vuejs",
+    "vue",
+    "ziggeo"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ziggeo/vue-ziggeo/issues"
+  },
+  "peerDependencies": {
+    "vue": ">=2.4.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "devDependencies": {
+    "vue": "^2.5.11",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.4",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^13.0.5",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1",
+    "ziggeo-client-sdk": "^2.35.22"
+  }
+}

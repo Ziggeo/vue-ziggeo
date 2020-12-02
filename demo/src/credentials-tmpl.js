@@ -1,0 +1,4 @@
+export default {
+  API_KEY: "YOUR_ZIGGEO_API_KEY",
+  VIDEO_TOKEN: "YOUR_ZIGGEO_VIDEO_KEY"
+}
