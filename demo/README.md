@@ -1,5 +1,7 @@
 # vue3-ziggeo-demo
 
+Change Ziggeo API key and video token in `credentials-tmp.js` file, after rename with it `credentials.js`.
+
 ## Project setup
 ```
 yarn install
